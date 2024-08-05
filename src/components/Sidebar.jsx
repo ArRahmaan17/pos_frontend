@@ -42,11 +42,11 @@ const solutions = [
 ];
 const callsToAction = [
   { name: "Watch demo", href: "#", icon: PlayCircleIcon },
-  { name: "Contact sales", href: "#", icon: PhoneIcon },
+  { name: "Contact admin", href: "#", icon: PhoneIcon },
 ];
 function SideBar() {
   return (
-    <div className="md:block h-screen w-screen max-w-16 md:max-w-xs flex-auto overflow-hidden bg-white dark:bg-slate-800 text-sm leading-6 shadow-lg ring-1 ring-gray-900/5">
+    <div className="md:block h-screen w-screen max-w-16 md:max-w-40 lg:max-w-xs flex-auto overflow-hidden bg-white dark:bg-slate-800 text-sm leading-6 shadow-lg ring-1 ring-gray-900/5">
       <div className="md:p-1 relative h-5/6 w-full">
         <div className="rounded-0 md:rounded-lg p-4 hover:bg-gray-50 dark:hover:bg-gray-600">
           <div className="font-semibold text-gray-900 dark:text-slate-100 text-center text-md lg:text-4xl">
@@ -56,7 +56,7 @@ function SideBar() {
         {solutions.map((item) => (
           <div
             key={item.name}
-            className="group relative flex md:gap-x-6 rounded-none md:rounded-lg p-4 hover:bg-gray-50 dark:hover:bg-gray-600"
+            className="group relative flex md:gap-x-6 rounded-none md:rounded-lg p-1 hover:bg-gray-50 dark:hover:bg-gray-600"
           >
             <div className="mt-1 flex h-11 w-11 md:flex-none items-center justify-center rounded-lg md:bg-gray-50 dark:md:bg-slate-600 group-hover:md:bg-white group-hover:md:dark:bg-slate-500">
               <item.icon
@@ -67,12 +67,12 @@ function SideBar() {
             <div>
               <a
                 href={item.href}
-                className="font-semibold text-gray-900 dark:text-slate-100 hidden md:block"
+                className="font-medium lg:font-semibold text-gray-900 dark:text-slate-100 hidden md:block md:mt-3 md:-mx-4"
               >
                 {item.name}
                 <span className="absolute inset-0" />
               </a>
-              <p className="mt-1 text-gray-600 dark:text-slate-400 hidden md:block">
+              <p className="mt-1 text-gray-600 dark:text-slate-400 hidden lg:block">
                 {item.description}
               </p>
             </div>
@@ -85,13 +85,13 @@ function SideBar() {
             <a
               key={item.name}
               href={item.href}
-              className="flex items-center justify-center gap-x-2.5 p-3 font-semibold text-gray-900 hover:bg-gray-100 dark:hover:bg-slate-600"
+              className="flex md:flex-col lg:flex-row items-center justify-center gap-x-2.5 p-3 font-semibold text-gray-900 hover:bg-gray-100 dark:hover:bg-slate-600"
             >
               <item.icon
                 aria-hidden="true"
                 className="h-5 w-5 flex-none text-gray-400 dark:text-slate-200"
               />
-              <div className="hidden md:block text-gray-600 dark:text-slate-200">
+              <div className="text-xs font-light lg:font-semibold hidden md:block text-gray-600 dark:text-slate-200 truncate">
                 {item.name}
               </div>
             </a>

@@ -8,7 +8,7 @@ const validateSession = () => {
     let statusToken = false;
     if (token) {
         let decodeToken = jwtDecode(token);
-        if (decodeToken.iat <= moment().add('1', 'day').unix()) {
+        if ((decodeToken.exp * 1000) >= (moment().unix() * 1000)) {
             statusToken = true;
         }
     }
@@ -27,5 +27,15 @@ const loggedUser = () => {
         return {};
     }
 }
+const getFiveDays = () => {
+    let result = [];
+    for (let index = 5; index > 0; index--) {
+        result.push(moment().add((-index), 'day').format('Y-MM-D'))
+    }
+    for (let index = 0; index < 5; index++) {
+        result.push(moment().add(index, 'day').format('Y-MM-D'))
+    }
+    return result
+}
 
-module.exports = { validateSession, loginSuccess, tokenUser, loggedUser }
+module.exports = { validateSession, loginSuccess, tokenUser, loggedUser, getFiveDays }
