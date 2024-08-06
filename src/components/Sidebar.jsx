@@ -8,6 +8,7 @@ import {
   FingerPrintIcon,
   SquaresPlusIcon,
 } from "@heroicons/react/24/outline";
+import { Link } from "react-router-dom";
 const solutions = [
   {
     name: "Analytics",
@@ -49,9 +50,12 @@ function SideBar() {
     <div className="md:block h-screen w-screen max-w-16 md:max-w-40 lg:max-w-xs flex-auto overflow-hidden bg-white dark:bg-slate-800 text-sm leading-6 shadow-lg ring-1 ring-gray-900/5">
       <div className="md:p-1 relative h-5/6 w-full">
         <div className="rounded-0 md:rounded-lg p-4 hover:bg-gray-50 dark:hover:bg-gray-600">
-          <div className="font-semibold text-gray-900 dark:text-slate-100 text-center text-md lg:text-4xl">
-            <a href={"/"}>POS</a>
-          </div>
+          <Link
+            to={"/home"}
+            className="font-semibold text-gray-900 dark:text-slate-100 text-center text-md lg:text-4xl"
+          >
+            <div>POS</div>
+          </Link>
         </div>
         {solutions.map((item) => (
           <div

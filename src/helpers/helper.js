@@ -30,10 +30,10 @@ const loggedUser = () => {
 const getFiveDays = () => {
     let result = [];
     for (let index = 5; index > 0; index--) {
-        result.push(moment().add((-index), 'day').format('Y-MM-D'))
+        result.push(moment().add((-index), 'day').format('D MMM'))
     }
     for (let index = 0; index < 5; index++) {
-        result.push(moment().add(index, 'day').format('Y-MM-D'))
+        result.push(moment().add(index, 'day').format('D MMM'))
     }
     return result
 }

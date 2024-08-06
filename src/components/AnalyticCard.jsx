@@ -4,9 +4,9 @@ function AnalyticCard(props) {
     <>
       <div
         className={`flex flex-col ${props.size ?? "w-full"} ${
-          props.color ? `bg-${props.color}-500/30` : "bg-rose-500/30"
+          props.color ? `bg-${props.color}-500/30` : "bg-orange-500/30"
         } dark:${
-          props.color ? `bg-${props.color}-700` : "bg-rose-700"
+          props.color ? `bg-${props.color}-700` : "bg-orange-700"
         } dark:shadow-slate-50/20 dark:shadow-2xl rounded-md shadow-lg h-fit`}
       >
         <div className="w-full flex justify-between pt-3 px-3 h-fit items-center">
@@ -16,9 +16,9 @@ function AnalyticCard(props) {
           {props.icon ? (
             <div
               className={`sm:hidden lg:block ${
-                props.color ? `bg-${props.color}-50/25` : "bg-rose-50/25"
+                props.color ? `bg-${props.color}-50/25` : "bg-orange-50/25"
               } shadow-md shadow-inherit dark:${
-                props.color ? `bg-${props.color}-50/25` : "bg-rose-50/25"
+                props.color ? `bg-${props.color}-50/25` : "bg-orange-50/25"
               } rounded-md`}
             >
               <props.icon className="h-6 w-6 m-2 text-slate-900 dark:text-slate-50" />
@@ -26,9 +26,9 @@ function AnalyticCard(props) {
           ) : (
             <div
               className={`sm:hidden lg:block ${
-                props.color ? `bg-${props.color}-50/25` : "bg-rose-50/25"
+                props.color ? `bg-${props.color}-50/25` : "bg-orange-50/25"
               } shadow-md shadow-inherit dark:${
-                props.color ? `bg-${props.color}-50/25` : "bg-rose-50/25"
+                props.color ? `bg-${props.color}-50/25` : "bg-orange-50/25"
               } rounded-md`}
             >
               <div className="h-6 w-6 m-2 text-slate-900 dark:text-slate-50 text-xs text-center">
