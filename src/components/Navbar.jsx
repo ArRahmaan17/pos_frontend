@@ -61,10 +61,10 @@ function Navbar(props) {
         </div>
       </div>
 
-      <header className="bg-white shadow-md dark:shadow-none dark:bg-slate-800 rounded-md m-2">
-        <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+      <header className="bg-white border border-y-indigo-100 dark:border-0 shadow-md dark:shadow-none dark:bg-slate-800 rounded-md m-2">
+        <div className="mx-auto px-2 py-3">
           <h1 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-slate-100">
-            {props.page ?? "Dashboard"}
+            {props.page ?? "Analytics"}
           </h1>
         </div>
       </header>

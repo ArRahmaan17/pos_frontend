@@ -68,7 +68,7 @@ function App() {
   return (
     <div className="App overflow-hidden" >
       <div className='flex flex-row gap-0'>
-        <SideBar />
+        <SideBar page={'Analytics'} />
         <div className="flex flex-col w-full dark:bg-slate-600">
           <Navbar />
           <div className='px-2 flex flex-col sm:flex-row gap-x-5 gap-y-1 md:gap-y-0'>

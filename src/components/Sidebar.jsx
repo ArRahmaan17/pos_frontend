@@ -1,6 +1,10 @@
 import React from "react";
 import { PhoneIcon, PlayCircleIcon } from "@heroicons/react/20/solid";
-import { XMarkIcon, ChevronDoubleRightIcon } from "@heroicons/react/24/outline";
+import {
+  XMarkIcon,
+  ChevronDoubleRightIcon,
+  ShieldCheckIcon,
+} from "@heroicons/react/24/outline";
 import {
   ArrowPathIcon,
   ChartPieIcon,
@@ -13,8 +17,14 @@ const solutions = [
   {
     name: "Analytics",
     description: "Get a better understanding of your traffic",
-    href: "#",
+    href: "/home",
     icon: ChartPieIcon,
+  },
+  {
+    name: "Roles",
+    description: "role management on your store",
+    href: "/role",
+    icon: ShieldCheckIcon,
   },
   {
     name: "Engagement",
@@ -45,7 +55,7 @@ const callsToAction = [
   { name: "Watch demo", href: "#", icon: PlayCircleIcon },
   { name: "Contact admin", href: "#", icon: PhoneIcon },
 ];
-function SideBar() {
+function SideBar(props) {
   return (
     <div className="md:block h-screen w-screen max-w-16 md:max-w-40 lg:max-w-xs flex-auto overflow-hidden bg-white dark:bg-slate-800 text-sm leading-6 shadow-lg ring-1 ring-gray-900/5">
       <div className="md:p-1 relative h-5/6 w-full">
@@ -60,22 +70,32 @@ function SideBar() {
         {solutions.map((item) => (
           <div
             key={item.name}
-            className="group relative flex md:gap-x-6 rounded-none md:rounded-lg p-1 hover:bg-gray-50 dark:hover:bg-gray-600"
+            className={`group relative flex md:gap-x-6 rounded-none md:rounded-lg p-1 ${
+              props.page === item.name
+                ? "bg-gray-50 dark:bg-gray-600"
+                : "hover:bg-gray-50 dark:hover:bg-gray-600"
+            }`}
           >
-            <div className="mt-1 flex h-11 w-11 md:flex-none items-center justify-center rounded-lg md:bg-gray-50 dark:md:bg-slate-600 group-hover:md:bg-white group-hover:md:dark:bg-slate-500">
+            <div
+              className={`mt-1 flex h-11 w-11 md:flex-none items-center justify-center rounded-lg ${
+                props.page === item.name
+                  ? "md:bg-white md:dark:bg-slate-500"
+                  : "md:bg-gray-50 dark:md:bg-slate-600 group-hover:md:bg-white group-hover:md:dark:bg-slate-500"
+              } `}
+            >
               <item.icon
                 aria-hidden="true"
                 className="h-6 w-6 text-gray-600 dark:text-slate-100 group-hover:text-indigo-600 group-hover:dark:text-slate-50"
               />
             </div>
             <div>
-              <a
-                href={item.href}
+              <Link
+                to={item.href}
                 className="font-medium lg:font-semibold text-gray-900 dark:text-slate-100 hidden md:block md:mt-3 md:-mx-4"
               >
                 {item.name}
                 <span className="absolute inset-0" />
-              </a>
+              </Link>
               <p className="mt-1 text-gray-600 dark:text-slate-400 hidden lg:block">
                 {item.description}
               </p>
